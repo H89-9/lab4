@@ -20,12 +20,12 @@ def run_ensemble_experiment(data: EnsembleInput) -> EnsembleResult:
     y_test = np.asarray(data.test_target).ravel()
 
     model = RandomForestClassifier(
-        n_estimators=200,
-        max_depth=6,
-        min_samples_leaf=3,
-        random_state=data.random_seed,
-        n_jobs=-1
-    )
+    n_estimators=300,
+    max_depth=8,
+    min_samples_leaf=2,
+    random_state=data.random_seed,
+    n_jobs=-1
+)
 
     model.fit(X_train, y_train)
 
